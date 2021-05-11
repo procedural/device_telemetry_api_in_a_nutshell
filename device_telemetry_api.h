@@ -4,6 +4,11 @@
 extern "C" {
 #endif
 
+typedef enum TelemetryDeviceStatus {
+  TELEMETRY_DEVICE_STATUS_SUCCESS = 0,
+  // ...
+} TelemetryDeviceStatus;
+
 typedef enum TelemetryType {
   TELEMETRY_TYPE_NONE = 0,
   TELEMETRY_TYPE_FOO  = 1,
@@ -35,7 +40,7 @@ typedef struct TelemetryBar {
 
 typedef void (*TypeTelemetryCallback)(const void * deviceHandle, TelemetryType telemetryType, const void * telemetry);
 
-void getTelemetry(const void * deviceHandle, TelemetryType telemetryType, void * outTelemetry, TypeTelemetryCallback telemetryCallback);
+TelemetryDeviceStatus getTelemetry(const void * deviceHandle, TelemetryType telemetryType, void * outTelemetry, TypeTelemetryCallback telemetryCallback);
 
 #ifdef __cplusplus
 }
