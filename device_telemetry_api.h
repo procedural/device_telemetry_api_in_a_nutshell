@@ -35,7 +35,7 @@ typedef struct TelemetryBar {
 
 typedef void (*TypeTelemetryCallback)(TelemetryType telemetryType, const void * telemetry);
 
-void getTelemetry(TelemetryType telemetryType, void * outTelemetry, TypeTelemetryCallback telemetryCallback);
+void getTelemetry(const void * deviceHandle, TelemetryType telemetryType, void * outTelemetry, TypeTelemetryCallback telemetryCallback);
 
 #ifdef __cplusplus
 }
